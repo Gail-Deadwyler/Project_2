@@ -1,51 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="utf-8">
-<title>Sign Up form</title>
-
+<title>Dashboard</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <style type="text/css">
     body {
         color: black;
-        background: #63738a;
+        background: #281A80;
         font-family: 'Roboto', sans-serif;
-        color: #fff;
-        
+      
+
     }
 
     .jumbotron {
-        background: lightgray;
+        color: rgb(128, 128, 128);
         font-family: 'Roboto', sans-serif;
-        color: black;
         border-radius: 10px;
+        padding: 10px;
     }
 
     .navbar {
-        margin-bottom: 20px;
-
+        margin-bottom: 10px;
+        font-size: medium;
     }
 
     .container {
         font-family: 'Roboto', sans-serif;
-        color: #fff;
+        color: black;
         border-radius: 10px;
+
     }
 
-    .row {
-        margin-bottom: 10px;
+
+    .card{
+        width:100%;
+        margin-bottom:1rem;
     }
-
-   .cardbody{
-       border-radius: 10px;
-   }
-
-   
-
 </style>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -71,9 +67,7 @@
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
+
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -85,92 +79,115 @@
 <div class="container">
 
     <div class="jumbotron jumbotron-fluid">
-            <div class="card text-center">
+        <div class="card text-center w-100">
+            <div class="card-header">
+                Featured
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+            <div class="card-footer text-muted">
+                2 days ago
+            </div>
+        </div>
+    </div>
+
+    <div class="userprofile col-md-12 ">
+        <div class="row">
+            <div class="col-md-3 d-flex align-items-stretch">
+                <div class="card">
                     <div class="card-header">
-                      Featured
+                        Personal Details
                     </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                    <div class="card-footer text-muted">
-                      2 days ago
-                    </div>
-                  </div>
-    </div>
-
-    <div class="userprofile col-md-6 float-left">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                        <img class="img-fluid" src="http://placehold.it/300x200" alt="">
+                    <img class="img-fluid" src="http://placehold.it/300x200" alt="">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                        <button type="submit" class="btn btn-success btn-lg btn-block">Sign Up</button>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-3 d-flex align-items-stretch">
                 <div class="card">
-                        <img class="img-fluid" src="http://placehold.it/300x200" alt="">
+                    <div class="card-header">
+                       Recent Activity
+                    </div>
+
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
                     </div>
                 </div>
             </div>
+
+
+            <div class="col-md-3 d-flex flex-wrap align-items-stretch">
+                    <div class="card">
+                        <div class="card-body">
+                            This is some text within a card body.
+                            <div class="card-footer">
+                                Steps
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            This is some text within a card body.
+                            <div class="card-footer">
+                                Steps
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-md-3 d-flex flex-wrap align-items-stretch">
+                    <div class="card">
+                        <div class="card-body">
+                            This is some text within a card body.
+                            <div class="card-footer">
+                                Steps
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            This is some text within a card body.
+                            <div class="card-footer">
+                                Steps
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            
+
         </div>
     </div>
 
 
-    <div class="blockcontainer col-md-6 float-right">
-        <div class="row">
-
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        This is some text within a card body.
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        This is some text within a card body.
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        This is some text within a card body.
-                    </div>
-                </div>
-            </div>
+        
 
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        This is some text within a card body.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
 
-</div>
 </body>
 
 </html>
