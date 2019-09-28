@@ -7,21 +7,42 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <style type="text/css">
-    .card-deck {
-        margin: 30px;
-    }
-
     body {
         color: black;
         background: #63738a;
         font-family: 'Roboto', sans-serif;
-        width: 100%;
+        color: #fff;
+        
     }
 
-    card-img-top {
-        width: 50%;
-        height: 50%;
+    .jumbotron {
+        background: lightgray;
+        font-family: 'Roboto', sans-serif;
+        color: black;
+        border-radius: 10px;
     }
+
+    .navbar {
+        margin-bottom: 20px;
+
+    }
+
+    .container {
+        font-family: 'Roboto', sans-serif;
+        color: #fff;
+        border-radius: 10px;
+    }
+
+    .row {
+        margin-bottom: 10px;
+    }
+
+   .cardbody{
+       border-radius: 10px;
+   }
+
+   
+
 </style>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -61,84 +82,95 @@
     </div>
 </nav>
 
-<!-- Page Content -->
 <div class="container">
 
-        <!-- Portfolio Item Heading -->
-        <h1 class="my-4">USER NAME
-         
-        </h1>
-      
-        <!-- Portfolio Item Row -->
+    <div class="jumbotron jumbotron-fluid">
+            <div class="card text-center">
+                    <div class="card-header">
+                      Featured
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                      2 days ago
+                    </div>
+                  </div>
+    </div>
+
+    <div class="userprofile col-md-6 float-left">
         <div class="row">
-      
-          <div class="col-md-6">
-            <img class="img-fluid" src="http://placehold.it/750x500" alt="">
-          </div>
-      
-          <div class="col-md-4">
-            <h3 class="my-3">PERSONAL</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-            <h3 class="my-3">Project Details</h3>
-            <ul>
-              <li>Lorem Ipsum</li>
-              <li>Dolor Sit Amet</li>
-              <li>Consectetur</li>
-              <li>Adipiscing Elit</li>
-            </ul>
-          </div>
-      
-        </div>
-        <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-                    <h1 class="display-12">DON'T STOP TIL ITS DONE</h1>    
+            <div class="col-md-6">
+                <div class="card">
+                        <img class="img-fluid" src="http://placehold.it/300x200" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
                 </div>
-
-                <div class="progress">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <div class="progress">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <div class="progress">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <div class="progress">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
             </div>
-        <h3 class="my-4">Related Projects</h3>
-      
+
+            <div class="col-md-6">
+                <div class="card">
+                        <img class="img-fluid" src="http://placehold.it/300x200" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="blockcontainer col-md-6 float-right">
         <div class="row">
-      
-          <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                  <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-                </a>
-          </div>
-      
-          <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                  <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-                </a>
-          </div>
-      
-          <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                  <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-                </a>
-          </div>
-      
-          <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                  <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-                </a>
-          </div>
 
-
-      
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        This is some text within a card body.
+                    </div>
+                </div>
             </div>
-          </div>
-        </body>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        This is some text within a card body.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        This is some text within a card body.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        This is some text within a card body.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
 
 </html>
