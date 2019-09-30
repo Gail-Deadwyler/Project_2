@@ -1,0 +1,1 @@
+CREATE DATABASE  fitness_db;

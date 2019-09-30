@@ -1,0 +1,31 @@
+<a href="/dashboard/{{activity.UserId}}">Dashboard</a>
+<p id="user-text" data-id="{{activity.UserId}}">You're logged in as </p>
+<h3 id="activity-text" data-id="{{activity.id}}">Edit Activity</h3>
+<form id="edit-form">
+
+    <div class="form-group">
+        <label for="activity-title">Activity:</label>
+        <input type="text" id="new-activity-title" name="title" value="{{activity.title}}">
+    </div>
+
+    <div class="form-group">
+        <label for="activity-type">Type:</label>
+        <select id="new-avtivity-type" name="type">
+            <option value="{{activity.type}}">{{activity.type}}</option>
+            <option value="Steps">Steps</option>
+            <option value="Hours">Hours</option>
+            <option value="Miles">Miles</option>
+            <option value="Yards">Yards</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="activity-amount">Amount:</label>
+        <input type="text" id="new-activity-amount" name="amount" value="{{activity.units}}">
+    </div>
+
+    <button type="submit">Save</button>
+
+</form>
+
+<script src="/js/editActivity.js"></script>
