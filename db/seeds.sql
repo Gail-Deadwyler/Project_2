@@ -2,6 +2,8 @@ USE fitness_db;
 
 INSERT INTO users 
     (
+        firstName,
+        lastName,
         username,
         email,
         password,
@@ -10,6 +12,8 @@ INSERT INTO users
     )
 VALUES 
     (
+        "Tyler",
+        "Falcoff",
         "tfalcoff",
         "tfalcoff@gmail.com",
         "12Test34",
@@ -17,6 +21,8 @@ VALUES
         NOW()
     ),
     (
+        "Kevin",
+        "Bacon",
         "KevBacon",
         "KevBacon@bacon.com",
         "12Test34",

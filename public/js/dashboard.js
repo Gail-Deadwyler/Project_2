@@ -4,7 +4,6 @@ $(function() {
 
         var id = $(`#welcome-text`).data(`id`);
 
-
         // Populate competitor info
         $.ajax(`/api/users`, {
             type: `GET`
@@ -13,7 +12,7 @@ $(function() {
             data.forEach(user => {
                 if (user.id!==id) {
 
-                    var userInfo = `<li id="user-li-${user.id}" data-user=${user.id}>${user.username}</li>`;
+                    var userInfo = `<div style="max-width: 150px; float: left;"><h5 id="competitor-${user.id}" data-user=${user.id}>${user.username}</h5></div>`;
                     $(`#competitors`).append(userInfo);
 
                     $.ajax(`/api/activities/${user.id}`, {
@@ -39,13 +38,13 @@ $(function() {
                             var userUnits = `
                             <ul>
                                 <li>Steps: ${type.Steps}</li>
-                                <li>hours: ${type.Hours}</li>
-                                <li>miles: ${type.Miles}</li>
-                                <li>yards: ${type.Yards}</li>
+                                <li>Hours: ${type.Hours}</li>
+                                <li>Miles: ${type.Miles}</li>
+                                <li>Yards: ${type.Yards}</li>
                             </ul>
                             `;
 
-                            $(`#user-li-${type.userId}`).append(userUnits);
+                            $(`#competitor-${type.userId}`).append(userUnits);
 
                         }
 
@@ -64,18 +63,25 @@ $(function() {
 
             data.forEach(activity => {
 
+
+
                 var editActivity = `<a href="/editActivity/${activity.id}">Edit</a>`;
                 var deleteActivity = `<a class="delete-activity" data-id="${activity.id}" href="">Delete</a>`;
                 var activity = 
-                `<li data-activity=${activity.id}>
-                    ${activity.title} 
-                    <ul>
-                        <li>
-                            ${activity.type}: ${activity.units}
-                        </li>
-                    </ui>
-                    ${editActivity} | ${deleteActivity}
-                </li>`;
+                `                
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">${activity.title}</h5>
+                                <p>${activity.type}: ${activity.units}</p>
+                                ${editActivity} | ${deleteActivity}     
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+
                 $(`#my-activities`).append(activity);
 
             });

@@ -73,14 +73,12 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="card text-center w-100">
             <div class="card-header">
-                Featured
+                <h5 class="card-title">Competitor Data</h5>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <div id="competitors" class="card-body">
             </div>
             <div class="card-footer text-muted">
-                2 days ago
+                
             </div>
         </div>
     </div>
@@ -94,132 +92,106 @@
                     </div>
                     <img class="img-fluid" src="http://placehold.it/300x200" alt="">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 id="welcome-text" class="card-title" data-id="{{user.id}}">Welcome {{user.firstName}}!</h5>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
+                            <li class="list-group-item">{{user.username}}</li>
+                            <li class="list-group-item">{{user.email}}</li>
                         </ul>
-                        <button type="submit" class="btn btn-success btn-lg btn-block">Sign Up</button>
+                        <br><br>
+                        <h5 class="card-title">Create Activity</h5>
+                            <form id="create-form">
+                                <div class="form-group">
+                                    <label for="activity-title">Activity:</label>
+                                    <input type="text" id="new-activity-title" name="title">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="activity-type">Type:</label>
+                                    <select id="new-avtivity-type" name="type">
+                                        <option value="Steps">Steps</option>
+                                        <option value="Hours">Hours</option>
+                                        <option value="Miles">Miles</option>
+                                        <option value="Yards">Yards</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="activity-amount">Amount:</label>
+                                    <input type="text" id="new-activity-amount" name="amount">
+                                </div>
+
+                                <button type="submit" class="btn btn-success btn-lg btn-block">Add Activity</button>
+
+                            </form>
+                        </div>
                     </div>
+                </div>
+
+                <div class="col-md-3 d-flex align-items-stretch">
+                    <div class="card" id="my-activities">
+                        <div class="card-header">
+                            Recent Activity
+                        </div>
+
+                        
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex flex-wrap align-items-stretch">
+                    <div class="card">
+                        <div class="card-header">
+                            Steps Graph
+                        </div>
+                        <div class="card-body">
+                            <img class="img-fluid" src="http://placehold.it/300x200" alt="">
+                            This is some text within a card body.
+                            <div class="card-footer">
+                                Average:
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            Distance Graph
+                        </div>
+                        <div class="card-body">
+                            <img class="img-fluid" src="http://placehold.it/300x200" alt="">
+                            This is some text within a card body.
+                            <div class="card-footer">
+                                Average:
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex flex-wrap align-items-stretch">
+                    <div class="card">
+                        <div class="card-header">
+                            Hours Graph:
+                        </div>
+                        <div class="card-body">
+                            <img class="img-fluid" src="http://placehold.it/300x200" alt="">
+                            This is some text within a card body.
+                            <div class="card-footer">
+                                Average:
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            Rewards
+                        </div>
+                        <div class="card-body">
+                            <img class="img-fluid" src="http://placehold.it/300x200" alt="">
+                            You Won XX Award this Week
+                            <div class="card-footer">
+                                Congratulations
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
 
-            <div class="col-md-3 d-flex align-items-stretch">
-                <div class="card">
-                    <div class="card-header">
-                        Recent Activity
-                    </div>
-
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                    <img class="img-fluid" src="http://placehold.it/300x200" alt="">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Steps Today</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                    <img class="img-fluid" src="http://placehold.it/300x200" alt="">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Distance Covered</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                    <img class="img-fluid" src="http://placehold.it/300x200" alt="">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Hours Passed</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-3 d-flex flex-wrap align-items-stretch">
-                <div class="card">
-                        <div class="card-header">
-                                Steps Graph
-                            </div>
-                    <div class="card-body">
-                            <img class="img-fluid" src="http://placehold.it/300x200" alt="">
-                        This is some text within a card body.
-                        <div class="card-footer">
-                            Average:
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                        <div class="card-header">
-                                Distance Graph
-                            </div>
-                    <div class="card-body">
-                            <img class="img-fluid" src="http://placehold.it/300x200" alt="">
-                        This is some text within a card body.
-                        <div class="card-footer">
-                            Average:
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 d-flex flex-wrap align-items-stretch">
-                <div class="card">
-                        <div class="card-header">
-                                Hours Graph:
-                            </div>
-                    <div class="card-body">
-                            <img class="img-fluid" src="http://placehold.it/300x200" alt="">
-                        This is some text within a card body.
-                        <div class="card-footer">
-                            Average:
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                        <div class="card-header">
-                                Rewards
-                            </div>
-                    <div class="card-body">
-                            <img class="img-fluid" src="http://placehold.it/300x200" alt="">
-                        You Won XX Award this Week
-                        <div class="card-footer">
-                           Congratulations
-                        </div>
-                    </div>
-                </div>
-
-
-        </div>
-    </div>
-
-
-
-
-
-
+            <script src="/js/dashboard.js"></script>

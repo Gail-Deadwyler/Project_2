@@ -22,9 +22,11 @@ module.exports = function(app) {
 
     app.post(`/api/users/`, function(req, res) {
         db.User.create({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
             email: req.body.email,
             username: req.body.username,
-            password: req.user.password
+            password: req.body.password
         }).then(function(user) {
             res.json(user);
         });
