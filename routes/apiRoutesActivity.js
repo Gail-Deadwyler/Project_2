@@ -34,8 +34,8 @@ module.exports = function(app) {
             type: req.body.type,
             units: req.body.units,
             UserId: req.body.UserId
-        }).then(function(user) {
-            res.json(user);
+        }).then(function(activity) {
+            res.json(activity);
         });
 
     });
@@ -50,8 +50,8 @@ module.exports = function(app) {
             where: {
                 id: req.params.id
             }
-        }).then(function(user) {
-            res.json(user);
+        }).then(function(activity) {
+            res.json(activity);
         })
     });
 

@@ -1,6 +1,6 @@
-$(function() {
+$(function () {
 
-    $(document).ready(function() {
+    $(document).ready(function () {
 
         var id = $(`#welcome-text`).data(`id`);
 
@@ -10,7 +10,7 @@ $(function() {
         }).then((data) => {
 
             data.forEach(user => {
-                if (user.id!==id) {
+                if (user.id !== id) {
 
                     var userInfo = `<div style="max-width: 150px; float: left;"><h5 id="competitor-${user.id}" data-user=${user.id}>${user.username}</h5></div>`;
                     $(`#competitors`).append(userInfo);
@@ -20,21 +20,21 @@ $(function() {
                     }).then((data) => {
 
                         if (data.length > 0) {
-    
+
                             var type = {
-    
+
                                 userId: data[0].UserId,
                                 Steps: 0,
                                 Hours: 0,
                                 Miles: 0,
                                 Yards: 0
-    
+
                             };
-    
+
                             data.forEach((activity) => {
                                 type[activity.type] += activity.units;
                             });
-    
+
                             var userUnits = `
                             <ul>
                                 <li>Steps: ${type.Steps}</li>
@@ -67,8 +67,8 @@ $(function() {
 
                 var editActivity = `<a href="/editActivity/${activity.id}">Edit</a>`;
                 var deleteActivity = `<a class="delete-activity" data-id="${activity.id}" href="">Delete</a>`;
-                var activity = 
-                `                
+                var activity =
+                    `                
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row no-gutters">
                         <div class="col-md-8">
@@ -84,6 +84,21 @@ $(function() {
 
                 $(`#my-activities`).append(activity);
 
+                // Delete activity
+                $(`.delete-activity`).on(`click`, function (event) {
+
+                    event.preventDefault();
+
+                    var activityId = $(this).data(`id`);
+
+                    $.ajax(`/api/activities/${activityId}`, {
+                        type: `DELETE`
+                    }).then(() => {
+                        location.reload();
+                    });
+
+                });
+
             });
 
         });
@@ -92,7 +107,7 @@ $(function() {
 
 
     // Create new activity
-    $(`#create-form`).on(`submit`, function(event) {
+    $(`#create-form`).on(`submit`, function (event) {
 
         event.preventDefault();
 
@@ -117,20 +132,7 @@ $(function() {
     });
 
 
-    // Delete activity
-    $(`.delete-activity`).on(`click`, function(event) {
 
-        event.preventDefault();
-
-        var activityId = $(this).data(`id`);
-
-        $.ajax(`/api/activities/${activityId}`, {
-            type: `DELETE`
-        }).then(() => {
-            location.reload();
-        });
-
-    });
 
 
 });
