@@ -4,57 +4,6 @@ $(function () {
 
         var id = $(`#welcome-text`).data(`id`);
 
-        // Populate competitor info
-        $.ajax(`/api/users`, {
-            type: `GET`
-        }).then((data) => {
-
-            data.forEach(user => {
-                if (user.id !== id) {
-
-                    var userInfo = `<div style="max-width: 150px; float: left;"><h5 id="competitor-${user.id}" data-user=${user.id}>${user.username}</h5></div>`;
-                    $(`#competitors`).append(userInfo);
-
-                    $.ajax(`/api/activities/${user.id}`, {
-                        type: `GET`
-                    }).then((data) => {
-
-                        if (data.length > 0) {
-
-                            var type = {
-
-                                userId: data[0].UserId,
-                                Steps: 0,
-                                Hours: 0,
-                                Miles: 0,
-                                Yards: 0
-
-                            };
-
-                            data.forEach((activity) => {
-                                type[activity.type] += activity.units;
-                            });
-
-                            var userUnits = `
-                            <ul>
-                                <li>Steps: ${type.Steps}</li>
-                                <li>Hours: ${type.Hours}</li>
-                                <li>Miles: ${type.Miles}</li>
-                                <li>Yards: ${type.Yards}</li>
-                            </ul>
-                            `;
-
-                            $(`#competitor-${type.userId}`).append(userUnits);
-
-                        }
-
-                    });
-
-                }
-            });
-
-        });
-
 
         // Get my activities
         $.ajax(`/api/activities/${id}`, {
@@ -82,7 +31,7 @@ $(function () {
                 </div>
                 `;
 
-                $(`#my-activities`).append(activity);
+                $(`#my-activities`).prepend(activity);
 
                 // Delete activity
                 $(`.delete-activity`).on(`click`, function (event) {

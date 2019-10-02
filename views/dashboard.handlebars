@@ -75,7 +75,10 @@
             <div class="card-header">
                 <h5 class="card-title">Competitor Data</h5>
             </div>
-            <div id="competitors" class="card-body">
+            <div id="competitors" class="card-body" style="max-height: 150px; overflow-y: scroll;">
+                <canvas id="competitorChart-Steps" style="max-height: 200px;max-width: 225px; float:left;"></canvas>
+                <canvas id="competitorChart-Hours" style="max-height: 200px;max-width: 225px; float:left;"></canvas>
+                <canvas id="competitorChart-Miles" style="max-height: 200px;max-width: 225px; float:left;"></canvas>
             </div>
             <div class="card-footer text-muted">
                 
@@ -128,9 +131,13 @@
                 </div>
 
                 <div class="col-md-3 d-flex align-items-stretch">
-                    <div class="card" id="my-activities">
+                    <div class="card" style="max-height: 500px; overflow: scroll;">
                         <div class="card-header">
                             Recent Activity
+                        </div>
+
+                        <div id="my-activities">
+
                         </div>
 
                         
@@ -142,8 +149,7 @@
                             Steps Graph
                         </div>
                         <div class="card-body">
-                            <img class="img-fluid" src="http://placehold.it/300x200" alt="">
-                            This is some text within a card body.
+                            <canvas id="myChart-Steps"></canvas>
                             <div class="card-footer">
                                 Average:
                             </div>
@@ -155,8 +161,7 @@
                             Distance Graph
                         </div>
                         <div class="card-body">
-                            <img class="img-fluid" src="http://placehold.it/300x200" alt="">
-                            This is some text within a card body.
+                            <canvas id="myChart-Miles"></canvas>
                             <div class="card-footer">
                                 Average:
                             </div>
@@ -169,8 +174,7 @@
                             Hours Graph:
                         </div>
                         <div class="card-body">
-                            <img class="img-fluid" src="http://placehold.it/300x200" alt="">
-                            This is some text within a card body.
+                            <canvas id="myChart-Hours"></canvas>
                             <div class="card-footer">
                                 Average:
                             </div>
@@ -194,4 +198,6 @@
                 </div>
             </div>
 
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
             <script src="/js/dashboard.js"></script>
+            <script src="/js/charts.js"></script>
