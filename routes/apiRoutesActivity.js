@@ -32,7 +32,10 @@ module.exports = function (app) {
 
         db.Activity.findAll(
             {
-                attributes: [`UserId`, [sequelize.fn(`sum`, sequelize.col(`units`)), `sumUnits`]],
+                attributes: [`UserId`, [sequelize.fn(`sum`, sequelize.col(`units`)), `sumUnits`], `User.username`],
+                include: [{
+                    model: db.User
+                }],
                 group: `UserId`,
                 where: {
                     type: req.params.activityType

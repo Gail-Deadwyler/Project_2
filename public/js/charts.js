@@ -24,21 +24,21 @@ $(function () {
         $.ajax(`/api/activities/sum/${activityType}`, {
             type: `GET`
         }).then((sum) => {
-            console.log(sum);
-            makeBarChart(sum, activityType)
+            makeBarChart(sum, activityType);
         });
 
     }
 
 
     function parseBarData(dataObject) {
+
         var parsedObject = {
             users: [],
             units: []
         };
 
         dataObject.forEach((user) => {
-            parsedObject.users.push(user.UserId);
+            parsedObject.users.push(user.User.username);
             parsedObject.units.push(user.sumUnits);
         });
 
@@ -60,6 +60,11 @@ $(function () {
             options: {
                 legend: {
                     display: false
+                },
+                title: {
+                    display: true,
+                    text: activityType,
+                    position: `bottom`
                 }
             }
         });
