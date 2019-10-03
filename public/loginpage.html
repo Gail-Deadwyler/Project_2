@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="utf-8">
+<title>User Log In</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<style type="text/css">
+    body {
+        color: #fff;
+        background: #63738a;
+    }
+
+    .form-control {
+        height: 40px;
+        font-family: 'Roboto', sans-serif;
+        color: #969fa4;
+    }
+
+    .signupForm {
+        width: 400px;
+        margin: 0 auto;
+        font-family: 'Roboto', sans-serif;
+        padding: 30px 0;
+    }
+
+    .signup-form h2 {
+        color: #FFFFFF;
+        position: relative;
+        text-align: center;
+    }
+
+    .btn {
+        font-size: 16px;
+        font-weight: bold;
+        outline: none;
+    }
+</style>
+
+<body>
+    <div class="signupForm">
+
+        <h2>Log In</h2>
+
+        <form class="login">
+
+            <div class="form-group">
+                <input type="username" class="form-control" name="username" id="username-input" placeholder="Username"
+                    required="required">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" id="password-input" placeholder="Password"
+                    required="required">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg btn-block">Log In</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/loginpage.js"></script>
+</body>
+
+</html>
