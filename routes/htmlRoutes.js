@@ -1,8 +1,14 @@
 var db = require(`../models`);
+var path = require("path");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
 
     app.get(`/`, function(req, res) {
+
+        if (req.user) {
+            res.redirect(`dashboard`);
+        }
 
         res.render(`loginpage`);
 
@@ -14,15 +20,13 @@ module.exports = function(app) {
 
     })
 
-    app.get(`/dashboard/:id?`, function(req, res) {
+    app.get(`/dashboard`, isAuthenticated, function(req, res) {
 
-        try {
-
-            if (!req.params.id) throw `No ID passed - redirect to login.`;
+        if (req.user) {
 
             db.User.findOne({
                 where: {
-                    id: req.params.id
+                    id: req.user.id
                 }
             }).then(function(user) {
                 res.render(`dashboard`, {
@@ -30,13 +34,9 @@ module.exports = function(app) {
                 });
             });
 
-        } catch (err) {
-
-            console.log(err);
-
-            res.redirect(`/`);
-
         }
+
+        res.render(`loginpage`);
 
     });
 
