@@ -1,52 +1,7 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿
+<link rel="stylesheet" href="/styles/register.css" type="text/css">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-<meta charset="utf-8">
-<title>User Log In</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<style type="text/css">
-    body {
-        color: #fff;
-        background:#281A80;
-    }
-
-    .form-control {
-        height: 40px;
-        font-family: 'Roboto', sans-serif;
-        color: black;
-    }
-
-    .signupForm {
-        width: 400px;
-        margin: 0 auto;
-        font-family: 'Roboto', sans-serif;
-        padding: 30px 0;
-    }
-
-    .signup-form h2 {
-        color: #FFFFFF;
-        position: relative;
-        text-align: center;
-    }
-
-    .btn {
-        font-size: 16px;
-        font-weight: bold;
-        outline: none;
-    }
-
-    .navbar {
-        margin-bottom: 10px;
-        font-size: medium;
-    }
-</style>
-
-<body background="C:\Users\AdminAccount\Downloads\comicbook.jpg"">
-        <nav class=" navbar navbar-expand-lg navbar-light bg-light">
-  
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -72,32 +27,50 @@
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </li>
-          
+
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
-    </nav>
-    <div class="signupForm">
+</nav>
+<div class="signup-form">
 
-        <h2>Log In</h2>
-
-
+    <h2>Sign Up</h2>
+    <form id="create-form">
         <div class="form-group">
-            <input type="username" class="form-control" name="username" placeholder="Username" required="required">
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <input id="new-user-firstName" type="text" class="form-control" name="firstName"
+                        placeholder="First Name" required="required">
+                </div>
+                <div class="col-xs-6">
+                    <input id="new-user-lastName" type="text" class="form-control" name="lastName"
+                        placeholder="Last Name" required="required">
+                </div>
+            </div>
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+            <input id="new-user-email" type="email" class="form-control" name="email" placeholder="Email"
+                required="required">
+        </div>
+        <div class="form-group">
+            <input id="new-user-username" type="username" class="form-control" name="username" placeholder="Username"
+                required="required">
+        </div>
+        <div class="form-group">
+            <input id="new-user-password" type="password" class="form-control" name="password" placeholder="Password"
+                required="required">
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-success btn-lg btn-block">Log In</button>
+            <button type="submit" class="btn btn-success btn-lg btn-block">Sign Up</button>
         </div>
-        </form>
+    </form>
+    <div class="text-center">Already have an account? <a href="./">Log in</a></div>
 
-    </div>
-</body>
+</form>
 
-</html>
+<script src="/js/register.js"></script>

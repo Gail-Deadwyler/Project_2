@@ -1,0 +1,170 @@
+<link rel="stylesheet" href="/styles/dashboard.css" type="text/css">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="card text-center w-100">
+            <div class="card-header">
+                <h5 class="card-title">Competitor Data</h5>
+            </div>
+            <div id="competitors" class="card-body" style="max-height: 150px; overflow-y: scroll;">
+                <canvas id="competitorChart-Steps" style="max-height: 200px;max-width: 225px; float:left;"></canvas>
+                <canvas id="competitorChart-Hours" style="max-height: 200px;max-width: 225px; float:left;"></canvas>
+                <canvas id="competitorChart-Miles" style="max-height: 200px;max-width: 225px; float:left;"></canvas>
+            </div>
+            <div class="card-footer text-muted">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="userprofile col-md-12 ">
+        <div class="row">
+            <div class="col-md-3 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="card-header">
+                        Personal Details
+                    </div>
+                    <img class="img-fluid" src="/images/emoji-user-img.jpg" alt="">
+                    <div class="card-body">
+                        <h5 id="welcome-text" class="card-title" data-id="{{user.id}}">Welcome {{user.firstName}}!</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{user.username}}</li>
+                            <li class="list-group-item">{{user.email}}</li>
+                        </ul>
+                        <br><br>
+                        <h5 class="card-title">Create Activity</h5>
+                            <form id="create-form">
+                                <div class="form-group">
+                                    <label for="activity-title">Activity:</label>
+                                    <input type="text" id="new-activity-title" name="title">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="activity-type">Type:</label>
+                                    <select id="new-avtivity-type" name="type">
+                                        <option value="Steps">Steps</option>
+                                        <option value="Hours">Hours</option>
+                                        <option value="Miles">Miles</option>
+                                        <option value="Yards">Yards</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="activity-amount">Amount:</label>
+                                    <input type="text" id="new-activity-amount" name="amount">
+                                </div>
+
+                                <button type="submit" class="btn btn-success btn-lg btn-block">Add Activity</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 d-flex align-items-stretch">
+                    <div class="card" style="max-height: 575px; overflow: scroll;">
+                        <div class="card-header">
+                            Recent Activity
+                        </div>
+
+                        <div id="my-activities">
+
+                        </div>
+
+                        
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex flex-wrap align-items-stretch">
+                    <div class="card">
+                        <div class="card-header">
+                            Steps Graph
+                        </div>
+                        <div class="card-body">
+                            <canvas id="myChart-Steps"></canvas>
+                            <div class="card-footer">
+                                Average:
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            Distance Graph
+                        </div>
+                        <div class="card-body">
+                            <canvas id="myChart-Miles"></canvas>
+                            <div class="card-footer">
+                                Average:
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex flex-wrap align-items-stretch">
+                    <div class="card">
+                        <div class="card-header">
+                            Hours Graph:
+                        </div>
+                        <div class="card-body">
+                            <canvas id="myChart-Hours"></canvas>
+                            <div class="card-footer">
+                                Average:
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            Rewards
+                        </div>
+                        <div class="card-body">
+                            <img class="img-fluid" src="http://placehold.it/300x200" alt="">
+                            You Won XX Award this Week
+                            <div class="card-footer">
+                                Congratulations
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+            <script src="/js/dashboard.js"></script>
+            <script src="/js/charts.js"></script>
