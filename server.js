@@ -34,10 +34,12 @@ require("./routes/api-routes.js")(app);
 //     res.send('Welcome to Passport with Sequelize and without HandleBars');
 // });
 
+console.log("Route set up")
 //this will listen to and show all activities on our terminal to 
 //let us know what is happening in our app
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function () {
+    console.log("DB Synced")
     app.listen(PORT, function () {
         console.log("App listening on PORT " + PORT);
     });
