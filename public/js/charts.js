@@ -36,33 +36,28 @@ $(function () {
             users: [],
             units: []
         };
-        
-        var len = dataObject.length > 2 ? 3 : 2;
-        
-        for (var i=0; i < len; i ++) {
+
+        for (var i = 0; i < dataObject.length; i++) {
             parsedObject.users.push(dataObject[i].User.username);
             parsedObject.units.push(parseInt(dataObject[i].sumUnits));
         }
 
-        console.log(parsedObject);
 
-        for (var i=1; i < parsedObject.units.length; i ++) {
-            if (parsedObject.units[i] > parsedObject.units[i-1]) {
-                // swap units
-                var tempUnits = parsedObject.units[i];
-                parsedObject.units[i] = parsedObject.units[i-1];
-                parsedObject.units[i-1] = tempUnits; 
-                // swap users
-                var tempUser = parsedObject.users[i];
-                parsedObject.users[i] = parsedObject.users[i-1];
-                parsedObject.users[i-1] = tempUser;
-            }
-        }
-
-        console.log(parsedObject);
+        // for (var i = 1; i < parsedObject.units.length; i++) {
+        //     if (parsedObject.units[i] > parsedObject.units[i - 1]) {
+        //         // swap units
+        //         var tempUnits = parsedObject.units[i];
+        //         parsedObject.units[i] = parsedObject.units[i - 1];
+        //         parsedObject.units[i - 1] = tempUnits;
+        //         // swap users
+        //         var tempUser = parsedObject.users[i];
+        //         parsedObject.users[i] = parsedObject.users[i - 1];
+        //         parsedObject.users[i - 1] = tempUser;
+        //     }
+        // }
 
         return parsedObject
-        
+
     }
 
 
