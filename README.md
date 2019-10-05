@@ -1,5 +1,5 @@
 # Cardio Comp
-* Debeloped by Double-T BG
+* Developed by Double-T BG
 * Url: [https://cardio-comp.herokuapp.com/](https://cardio-comp.herokuapp.com/)
 
 ## Summary 
