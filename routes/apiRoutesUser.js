@@ -53,20 +53,4 @@ module.exports = function(app) {
         });
     });
 
-    app.put('/api/burgers/', function(req, res) {
-        db.User.update({
-            email: req.body.email,
-            username: req.body.username,
-            password: req.user.password
-        }, {
-            where: {
-                id: req.body.id
-            }
-        }).then(function(user) {
-            res.json(user);
-        });
-    });
-
-
-
 }

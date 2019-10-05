@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "maRiner1!",
     "database": "fitness_db",
     "host": "localhost",
     "dialect": "mysql"

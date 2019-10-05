@@ -11,8 +11,8 @@ $(function () {
             var data = parseLineData(activities);
             Object.keys(data).forEach((activityType => {
                 makeLineChart(data[activityType], activityType);
-                initiateBarChart(activityType)
-            }))
+                initiateBarChart(activityType);
+            }));
         });
 
     });
@@ -32,6 +32,7 @@ $(function () {
 
     function parseBarData(dataObject) {
 
+        // Get users and units into ordered list
         var parsedObject = {
             users: [],
             units: []
@@ -42,21 +43,40 @@ $(function () {
             parsedObject.units.push(parseInt(dataObject[i].sumUnits));
         }
 
+        // Sort by units decending
+        // Check if sorted 
+        while (!checkSorted(parsedObject.units)) {
+            for (var i = 1; i < parsedObject.units.length; i++) {
 
-        // for (var i = 1; i < parsedObject.units.length; i++) {
-        //     if (parsedObject.units[i] > parsedObject.units[i - 1]) {
-        //         // swap units
-        //         var tempUnits = parsedObject.units[i];
-        //         parsedObject.units[i] = parsedObject.units[i - 1];
-        //         parsedObject.units[i - 1] = tempUnits;
-        //         // swap users
-        //         var tempUser = parsedObject.users[i];
-        //         parsedObject.users[i] = parsedObject.users[i - 1];
-        //         parsedObject.users[i - 1] = tempUser;
-        //     }
-        // }
+                if (parsedObject.units[i] > parsedObject.units[i - 1]) {
+                    // swap units
+                    var tempUnits = parsedObject.units[i];
+                    parsedObject.units[i] = parsedObject.units[i - 1];
+                    parsedObject.units[i - 1] = tempUnits;
+                    // swap users
+                    var tempUser = parsedObject.users[i];
+                    parsedObject.users[i] = parsedObject.users[i - 1];
+                    parsedObject.users[i - 1] = tempUser;
+                }
+    
+            }
+        }
+        
 
-        return parsedObject
+        // Get top 3
+        var len = parsedObject.users.length > 2 ? 3 : parsedObject.users.length;
+
+        var finObject = {
+            users: [],
+            units: []
+        }
+
+        for (var i=0; i<len; i++) {
+            finObject.users.push(parsedObject.users[i]);
+            finObject.units.push(parsedObject.units[i]);
+        }
+
+        return finObject
 
     }
 
@@ -69,7 +89,8 @@ $(function () {
             data: {
                 labels: data.users,
                 datasets: [{
-                    data: data.units
+                    data: data.units,
+                    backgroundColor: `rgba(14, 174, 232, 0.5)`
                 }]
             },
             options: {
@@ -80,6 +101,13 @@ $(function () {
                     display: true,
                     text: activityType,
                     position: `bottom`
+                },
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]                
                 }
             }
         });
@@ -98,7 +126,8 @@ $(function () {
                 labels: dataObject.labels,
                 datasets: [
                     {
-                        data: dataObject.data
+                        data: dataObject.data,
+                        backgroundColor: `rgba(14, 174, 232, 0.5)`
                     }
                 ]
             },
@@ -107,6 +136,13 @@ $(function () {
             options: {
                 legend: {
                     display: false
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]                
                 }
             }
         });
@@ -154,6 +190,19 @@ $(function () {
         var shortDate = `${date.getMonth() + 1}/${date.getDate()}`
 
         return shortDate
+
+    }
+
+
+    function checkSorted(array) {
+
+        for (var i=1; i<array.length; i++) {
+
+            if (array[i] > array[i-1]) return false
+
+        }
+
+        return true
 
     }
 

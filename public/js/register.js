@@ -21,7 +21,7 @@ $(function() {
                 type: `POST`,
                 data: newUser
             }).then((user) => {
-                location.replace(`./dashboard/${user.id}`);
+                location.replace(`./dashboard/`);
             });
     
         });
