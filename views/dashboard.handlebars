@@ -1,42 +1,4 @@
 <link rel="stylesheet" href="/styles/dashboard.css" type="text/css">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
-
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <a class="navbar-brand" href="/logout">
-        Logout
-      </a>
-    </div>
-</nav>
 
 <div class="container">
 
@@ -46,9 +8,9 @@
                 <h5 class="card-title">Competitor Data</h5>
             </div>
             <div id="competitors" class="card-body" style="max-height: 150px; overflow-y: scroll;">
-                <canvas id="competitorChart-Steps" style="max-height: 200px;max-width: 225px; float:left;"></canvas>
-                <canvas id="competitorChart-Hours" style="max-height: 200px;max-width: 225px; float:left;"></canvas>
-                <canvas id="competitorChart-Miles" style="max-height: 200px;max-width: 225px; float:left;"></canvas>
+                <canvas id="competitorChart-Steps" style="max-height: 130px;max-width: 33%; float:left;"></canvas>
+                <canvas id="competitorChart-Hours" style="max-height: 130px;max-width: 33%; float:left;"></canvas>
+                <canvas id="competitorChart-Miles" style="max-height: 130px;max-width: 33%; float:left;"></canvas>
             </div>
             <div class="card-footer text-muted">
                 
@@ -63,7 +25,7 @@
                     <div class="card-header">
                         Personal Details
                     </div>
-                    <img class="img-fluid" src="/images/emoji-user-img.jpg" alt="">
+                    <img class="img-fluid" src="/images/emoji-user-img.jpg" alt="" style="max-height: 150px; max-width: 150px; margin-left: 25px">
                     <div class="card-body">
                         <h5 id="welcome-text" class="card-title" data-id="{{user.id}}">Welcome {{user.firstName}}!</h5>
                         <ul class="list-group list-group-flush">
@@ -84,7 +46,6 @@
                                         <option value="Steps">Steps</option>
                                         <option value="Hours">Hours</option>
                                         <option value="Miles">Miles</option>
-                                        <option value="Yards">Yards</option>
                                     </select>
                                 </div>
 
@@ -101,7 +62,7 @@
                 </div>
 
                 <div class="col-md-3 d-flex align-items-stretch">
-                    <div class="card" style="max-height: 575px; overflow: scroll;">
+                    <div class="card" style="max-height: 475px; overflow: scroll;">
                         <div class="card-header">
                             Recent Activity
                         </div>
@@ -119,10 +80,7 @@
                             Steps Graph
                         </div>
                         <div class="card-body">
-                            <canvas id="myChart-Steps"></canvas>
-                            <div class="card-footer">
-                                Average:
-                            </div>
+                            <canvas id="myChart-Steps" style="max-height:200px"></canvas>
                         </div>
                     </div>
 
@@ -132,9 +90,6 @@
                         </div>
                         <div class="card-body">
                             <canvas id="myChart-Miles"></canvas>
-                            <div class="card-footer">
-                                Average:
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -145,9 +100,6 @@
                         </div>
                         <div class="card-body">
                             <canvas id="myChart-Hours"></canvas>
-                            <div class="card-footer">
-                                Average:
-                            </div>
                         </div>
                     </div>
 
@@ -156,8 +108,7 @@
                             Rewards
                         </div>
                         <div class="card-body">
-                            <img class="img-fluid" src="http://placehold.it/300x200" alt="">
-                            You Won XX Award this Week
+                            <img class="img-fluid" src="/images/emoji-trophy.jpeg" alt="trophy" style="max-height: 150px;margin:15px">
                             <div class="card-footer">
                                 Congratulations
                             </div>

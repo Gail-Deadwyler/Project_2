@@ -1,8 +1,6 @@
 body {
     color: black;
   
-  
-      
         background-color: #cccccc;
   
     font-family: 'Roboto', sans-serif;
@@ -63,20 +61,11 @@ body {
      font-style: bold;
  }
 
- .jumbotron > .card {
-    background-color: white;
-    border-style: solid;
-    border-width: 3px;
-    border-color: rgb(245, 184, 184);
-    border-radius: 10px;
+ h3 {
+     padding: 5px
  }
 
- #my-activities > .card {
-    background-color: white;
-    border-style: solid;
-    border-width: 3px;
-    border-color: rgb(245, 184, 184);
-    border-radius: 10px;
+ form {
+     padding: 10px
  }
-
   
