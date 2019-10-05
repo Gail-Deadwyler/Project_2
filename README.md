@@ -1,24 +1,25 @@
-# Cardio Comp
-* Debeloped by Double-T BG
-* Url: [https://cardio-comp.herokuapp.com/](https://cardio-comp.herokuapp.com/)
+# Cardio Comp
+* Debeloped by Double-T BG
+* Url: [https://cardio-comp.herokuapp.com/](https://cardio-comp.herokuapp.com/)
 
-### Summary:
+## Summary 
+
 Cardio-Comp is a one stop fitness tracker that allows you to compete with your friends. Here we record the steps, distance, with a history feature that allows multiple users and showing your progress and improvements.
 
-### Team members:
-* Tyler Falcoff
-* Gail Deadwyler
-* Taylor Johnson-Brady
-* Brady Wilkie
+### Team members:
+* Tyler Falcoff
+* Gail Deadwyler
+* Taylor Johnson-Brady
+* Brady Wilkie
 
-### Technologies used:
-* node
-* express
-* mysql
-* heroku
-* passport
-* handlebars
-* json
+### Technologies used:
+* node
+* express
+* mysql
+* heroku
+* passport
+* handlebars
+* json
 * express handlebars
 
 Installation:
