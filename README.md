@@ -6,6 +6,10 @@
 
 Cardio-Comp is a one stop fitness tracker that allows you to compete with your friends. Here we record the steps, distance, with a history feature that allows multiple users and showing your progress and improvements.
 
+### Test Credentials
+* Username: hansolo
+* Password: 1234test
+
 ### Team members:
 * Tyler Falcoff
 * Gail Deadwyler
@@ -20,7 +24,7 @@ Cardio-Comp is a one stop fitness tracker that allows you to compete�
 * passport
 * handlebars
 * json
-* express handlebars
+* express handlebars
 
 Installation:
 ```
